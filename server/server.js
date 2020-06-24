@@ -40,8 +40,9 @@ app.post('/contact-form', (req, res) => {
 })
 
 app.post('/formsubmissions', (req, res) => {
-    fs.readFileSync('contacts.json', { encoding: 'utf-8' }, (err, data) => {
+    fs.readFile('contacts.json', { encoding: 'utf-8' }, (err, data) => {
         if(err) console.log(err);
+        console.log(data);
         res.send(data);
     })
 })
